@@ -22,7 +22,7 @@ if ("AmbientLightSensor" in window) {
       document.body.style.backgroundColor = bodyColor;
 
       // Set text color
-      const textColor = `rgba(255, 255, 255, ${1 - illuminancePercentage})`; // R, G, B, A
+      const textColor = `rgba(255, 255, 255, ${illuminancePercentage})`; // R, G, B, A
       document.body.style.color = textColor;
 
       // Set lamp color
@@ -31,7 +31,7 @@ if ("AmbientLightSensor" in window) {
 
       // Set lamp box-shadow intensity
       const shadowIntensity = illuminancePercentage * 10; // Scale up to make the effect more visible
-      const boxShadowValue = `0 0 ${shadowIntensity}px ${shadowIntensity}px rgba(255, 255, 0, ${illuminancePercentage})`;
+      const boxShadowValue = `0 0 ${shadowIntensity}px ${shadowIntensity}px rgba(255, 251, 0, ${illuminancePercentage})`;
       lamp.style.boxShadow = boxShadowValue;
     } else {
       console.error("No illuminance value");
