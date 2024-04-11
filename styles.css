@@ -1,3 +1,6 @@
+body {
+  background-color: var(--body-color, rgba(0, 0, 0, 0));
+}
 .container {
   text-align: center;
   margin-top: 50px;
@@ -42,4 +45,9 @@
 .info {
   position: absolute;
   bottom: 0;
+}
+
+p,
+h1 {
+  color: var(--tekst-color, rgb(0, 0, 0));
 }
