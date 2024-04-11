@@ -1,7 +1,7 @@
 // Check if AmbientLightSensor is supported
 const lightLevel = document.getElementById("light-level");
 const lamp = document.querySelector("#lamp .glass");
-const test = document.querySelector("#test");
+const test = document.getElementById("#test");
 
 if ("AmbientLightSensor" in window) {
   const sensor = new AmbientLightSensor();
