@@ -1,5 +1,6 @@
 // Check if AmbientLightSensor is supported
 let lightLevel = document.getElementById("light-level");
+
 if ("AmbientLightSensor" in window) {
   const sensor = new AmbientLightSensor();
 
@@ -7,9 +8,7 @@ if ("AmbientLightSensor" in window) {
   sensor.onreading = () => {
     if (sensor.illuminance !== null) {
       console.log("sensor.illuminance", sensor.illuminance);
-      lightLevel.textContent = `Light Level: ${sensor.illuminance.toFixed(
-        2
-      )} lux`;
+      lightLevel.textContent = `Light Level: ${sensor.illuminance} lux`;
     } else {
       console.log("sensor.illuminance", sensor.illuminance);
     }
