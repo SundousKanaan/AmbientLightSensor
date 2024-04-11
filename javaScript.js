@@ -1,6 +1,7 @@
 // Check if AmbientLightSensor is supported
 const lightLevel = document.getElementById("light-level");
 const lamp = document.querySelector("#lamp .glass");
+const test = document.querySelector("#test");
 
 if ("AmbientLightSensor" in window) {
   const sensor = new AmbientLightSensor();
@@ -16,7 +17,7 @@ if ("AmbientLightSensor" in window) {
 
       // Convert illuminance to a value between 0 and 1
       const illuminancePercentage = sensor.illuminance / 1000; // Divided by 1000 for normalization
-
+      test.textContent = `illuminancePercentage: ${illuminancePercentage}`;
       // Set body color
       const bodyColor = `rgba(0, 0, 0, ${illuminancePercentage})`; // R, G, B, A
       document.body.style.backgroundColor = bodyColor;
