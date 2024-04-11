@@ -3,12 +3,43 @@
   margin-top: 50px;
 }
 
-.light-level {
+#light-level {
   font-size: 24px;
   margin-top: 20px;
 }
 
+#lamp {
+  width: 10rem;
+  height: 10rem;
+
+  position: relative;
+  top: -1rem;
+  left: calc(50% - 5rem);
+}
+
+#lamp .triangle {
+  width: inherit;
+  height: 75%;
+  border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+  background-color: rgb(54, 54, 54);
+  position: absolute;
+  z-index: 2;
+}
+
+#lamp .glass {
+  width: 50%;
+  height: 50%;
+  background-color: var(--lamp-color, rgba(80, 80, 80, 0.116));
+  box-shadow: 0 0 10px 10px transparent;
+  border-radius: 50%;
+  border: 2px solid rgb(54, 54, 54);
+
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+}
+
 .info {
-  width: 70%;
-  margin: 3rem auto;
+  position: absolute;
+  bottom: 0;
 }
