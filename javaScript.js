@@ -1,6 +1,6 @@
 // Check if AmbientLightSensor is supported
-let lightLevel = document.getElementById("light-level");
-let lamp = document.querySelector("#lamp .glass");
+const lightLevel = document.getElementById("light-level");
+const lamp = document.querySelector("#lamp .glass");
 
 if ("AmbientLightSensor" in window) {
   const sensor = new AmbientLightSensor();
@@ -17,18 +17,24 @@ if ("AmbientLightSensor" in window) {
       // Convert illuminance to a value between 0 and 1
       const illuminancePercentage = sensor.illuminance / 1000; // Divided by 1000 for normalization
 
+      console.log({ illuminancePercentage });
       const bodyColor = `rgba(0, 0, 0, ${illuminancePercentage})`; // R, G, B, A
-      document.documentElement.style.setProperty("--body-color", bodyColor);
+      document.body.style.backgroundColor = bodyColor;
+
       // Set text color
-      const tekstColor = `rgba(225,225, 225, ${illuminancePercentage})`; // R, G, B, A
-      document.documentElement.style.setProperty("--tekst-color", tekstColor);
+      const textColor = `rgba(255, 255, 255, ${1 - illuminancePercentage})`; // R, G, B, A
+      document.body.style.color = textColor;
+
       // Set lamp color
       const lampColor = `rgba(255, 255, 0, ${illuminancePercentage})`; // R, G, B, A
-      document.documentElement.style.setProperty("--lamp-color", lampColor);
+      lamp.style.backgroundColor = lampColor;
+
       // Set lamp box-shadow intensity
       const shadowIntensity = illuminancePercentage * 10; // Scale up to make the effect more visible
       const boxShadowValue = `0 0 ${shadowIntensity}px ${shadowIntensity}px rgba(255, 255, 0, ${illuminancePercentage})`;
-      document.getElementById("lamp").style.boxShadow = boxShadowValue;
+      lamp.style.boxShadow = boxShadowValue;
+    } else {
+      console.error("No illuminance value");
     }
   };
 
