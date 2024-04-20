@@ -34,6 +34,7 @@ h1 {
 
   /* box-shadow: 0 0 100em 1.5em var(--gloed); */
   box-shadow: none;
+  /* box-shadow: 0 0 100px 1.5em var(--gloed); */
 }
 
 .glitter {

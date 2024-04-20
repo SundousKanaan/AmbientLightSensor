@@ -15,8 +15,7 @@ if ("AmbientLightSensor" in window) {
         2
       )} lux`;
 
-      const glowIntensity = illuminance * 0.1; // Adjust the multiplier as needed
-      // Apply the glow intensity to the .gloeiLamp element
+      const glowIntensity = illuminance * 2; // Adjust the multiplier as needed
       gloeiLamp.style.boxShadow = `0 0 ${glowIntensity}px 1.5em var(--gloed)`;
     }
   };
