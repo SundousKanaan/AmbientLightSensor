@@ -1,8 +1,8 @@
 // Check if AmbientLightSensor is supported
-const lightLevel = document.getElementById("light-level");
-const lamp = document.querySelector("#lamp .glass");
+const lightLevel = document.getElementById("lux");
 
 if ("AmbientLightSensor" in window) {
+  // Create a new AmbientLightSensor object
   const sensor = new AmbientLightSensor();
 
   // Update lamp color and shadow when the sensor value changes
@@ -13,21 +13,6 @@ if ("AmbientLightSensor" in window) {
       lightLevel.textContent = `Light Level: ${sensor.illuminance.toFixed(
         2
       )} lux`;
-
-      // Convert illuminance to a value between 0 and 1
-      const illuminancePercentage = sensor.illuminance / 1000; // Divided by 1000 for normalization
-      // Set body color
-      const bodyColor = `rgba(161, 161, 161, ${illuminancePercentage})`; // R, G, B, A
-      document.body.style.backgroundColor = bodyColor;
-
-      // Set lamp color
-      const lampColor = `rgba(255, 255, 0, ${illuminancePercentage})`; // R, G, B, A
-      lamp.style.backgroundColor = lampColor;
-
-      // Set lamp box-shadow intensity
-      const shadowIntensity = illuminancePercentage * 10; // Scale up to make the effect more visible
-      const boxShadowValue = `0 0 ${shadowIntensity}px ${shadowIntensity}px rgba(255, 251, 0, ${illuminancePercentage})`;
-      lamp.style.boxShadow = boxShadowValue;
     }
   };
 

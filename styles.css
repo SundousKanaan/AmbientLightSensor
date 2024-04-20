@@ -1,45 +1,60 @@
-.container {
-  text-align: center;
-  margin-top: 50px;
+:root {
+  --wit: rgba(255, 255, 255);
+  --bg: #020304;
+  --gloeilamp: #f9ee64;
+  --gloed: #f9ef6469;
 }
 
-#light-level {
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-#lamp {
-  width: 10rem;
-  height: 10rem;
+body {
+  height: 100%;
+  margin: 0;
+  margin-right: 1em;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: var(--bg);
 
   position: relative;
-  top: -1rem;
-  left: calc(50% - 5rem);
 }
 
-#lamp .triangle {
-  width: inherit;
-  height: 75%;
-  border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
-  background-color: rgb(54, 54, 54);
-  position: absolute;
-  z-index: 2;
+h1 {
+  color: var(--wit);
+  text-align: center;
+  font-size: 3em;
+  margin-top: 1em;
 }
-
-#lamp .glass {
-  width: 50%;
-  height: 50%;
-  background-color: var(--lamp-color, rgba(80, 80, 80, 0.116));
-  box-shadow: 0 0 10px 10px transparent;
+.gloeiLamp {
+  width: 50vw;
+  aspect-ratio: 1;
+  background-color: var(--gloeilamp);
   border-radius: 50%;
-  border: 2px solid rgb(54, 54, 54);
+  border: solid 0.625em var(--wit);
+  position: fixed;
+  bottom: -2em;
+  left: calc(50% - 50vw / 2);
 
-  position: absolute;
-  bottom: 0;
-  left: 25%;
+  /* box-shadow: 0 0 100em 1.5em var(--gloed); */
+  box-shadow: none;
 }
 
-.info {
+.glitter {
+  width: 30%;
+  height: 20%;
+  background-color: var(--wit);
+  border-radius: 44% 55% 45% 56% / 38% 39% 60% 61%;
+
   position: absolute;
-  bottom: 0;
+  transform: rotate(30deg);
+  top: 10%;
+  right: 15%;
+}
+
+.text {
+  width: 80%;
+  text-align: center;
+  padding: 0 10%;
+  color: var(--wit);
+  font-size: 2em;
+
+  position: absolute;
+  top: 3em;
 }
