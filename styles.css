@@ -8,9 +8,9 @@
 body.dark {
   --wit: rgb(184, 184, 184);
   --bg: #020304;
+  --bg: red;
   --gloeilamp: #8a8989;
   --gloed: transparent;
-  --gloed: red;
 }
 
 body {
