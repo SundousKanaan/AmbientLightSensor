@@ -19,6 +19,7 @@ if ("AmbientLightSensor" in window) {
       lightLevel.textContent = `Light Level: ${sensor.illuminance.toFixed(
         2
       )} lux`;
+      bodyElement.classList.remove("dark");
 
       const glowIntensity = sensor.illuminance.toFixed(0) * 2; // Adjust the multiplier as needed
       const glowSpread = sensor.illuminance.toFixed(0) / 2; // Adjust the divider as needed
