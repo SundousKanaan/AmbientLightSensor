@@ -10,7 +10,7 @@ if ("AmbientLightSensor" in window) {
   // Update lamp color and shadow when the sensor value changes
 
   sensor.onreading = () => {
-    if (sensor.illuminance === null) {
+    if (sensor.illuminance === null || sensor.illuminance === 0) {
       body.classList.add("dark");
     }
 
