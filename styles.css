@@ -3,14 +3,14 @@
   --bg: #020304;
   --gloeilamp: rgb(241, 232, 96);
   --gloed: rgb(249, 239, 100);
+  --text: #fff;
 }
 
 body.dark {
   --wit: rgb(184, 184, 184);
-  --bg: #020304;
-  --bg: red;
   --gloeilamp: #8a8989;
   --gloed: transparent;
+  --text: transparent;
 }
 
 body {
@@ -60,7 +60,7 @@ h1 {
   width: 80%;
   text-align: center;
   padding: 0 10%;
-  color: var(--wit);
+  color: var(--text);
   font-size: 2em;
 
   position: absolute;

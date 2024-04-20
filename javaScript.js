@@ -1,7 +1,7 @@
 // Check if AmbientLightSensor is supported
 const lightLevel = document.getElementById("lux");
 const gloeiLamp = document.querySelector(".gloeiLamp");
-const body = document.querySelector("body");
+const bodyElement = document.querySelector("body");
 
 if ("AmbientLightSensor" in window) {
   // Create a new AmbientLightSensor object
@@ -11,7 +11,7 @@ if ("AmbientLightSensor" in window) {
 
   sensor.onreading = () => {
     if (sensor.illuminance === null || sensor.illuminance === 0) {
-      body.classList.add("dark");
+      bodyElement.classList.add("dark");
     }
 
     if (sensor.illuminance !== null) {
