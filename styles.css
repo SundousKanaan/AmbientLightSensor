@@ -60,11 +60,25 @@ h1 {
   width: 80%;
   text-align: center;
   padding: 0 10%;
-  /* color: var(--text); */
-  color: black;
+  color: var(--text);
+  /* color: black; */
   font-size: 2em;
 
   position: absolute;
-  bottom: calc(50vw + 0.5em);
+  bottom: 50vh;
+  /* bottom: calc(50vw + 0.5em); */
   z-index: 100;
+}
+
+@media screen and (orientation: landscape) {
+  .gloeiLamp {
+    width: 25%;
+    aspect-ratio: 1;
+    bottom: -2em;
+    left: calc(50% - 25% / 2);
+  }
+
+  .text {
+    bottom: 50%;
+  }
 }
