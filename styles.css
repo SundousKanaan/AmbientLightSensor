@@ -1,14 +1,14 @@
 :root {
   --wit: rgba(255, 255, 255);
   --bg: #020304;
-  --gloeilamp: rgb(249, 239, 100);
+  --gloeilamp: rgb(241, 232, 96);
   --gloed: rgb(249, 239, 100);
 }
 
 body.dark {
   --wit: rgb(184, 184, 184);
   --bg: #020304;
-  --gloeilamp: #707070;
+  --gloeilamp: #8a8989;
   --gloed: transparent;
 }
 
@@ -40,9 +40,7 @@ h1 {
   bottom: -2em;
   left: calc(50% - 50vw / 2);
 
-  /* box-shadow: 0 0 100em 1.5em var(--gloed); */
   box-shadow: none;
-  /* box-shadow: 0 0 200px 100px var(--gloed); */
 }
 
 .glitter {
