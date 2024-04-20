@@ -12,14 +12,15 @@ if ("AmbientLightSensor" in window) {
   sensor.onreading = () => {
     if (sensor.illuminance === null || sensor.illuminance === 0) {
       bodyElement.classList.add("dark");
-    }
-
-    if (sensor.illuminance !== null) {
+    } else if (sensor.illuminance !== null) {
       // De methode .toFixed(2) wordt gebruikt om het aantal decimalen te beperken tot twee cijfers na de komma.
       lightLevel.textContent = `Light Level: ${sensor.illuminance.toFixed(
         2
       )} lux`;
-      bodyElement.classList.remove("dark");
+
+      if (bodyElement.classList.contains("dark")) {
+        bodyElement.classList.remove("dark");
+      }
 
       const glowIntensity = sensor.illuminance.toFixed(0) * 2; // Adjust the multiplier as needed
       const glowSpread = sensor.illuminance.toFixed(0) / 2; // Adjust the divider as needed
