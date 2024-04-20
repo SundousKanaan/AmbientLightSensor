@@ -10,6 +10,7 @@ body.dark {
   --bg: #020304;
   --gloeilamp: #8a8989;
   --gloed: transparent;
+  --gloed: red;
 }
 
 body {
