@@ -11,6 +11,7 @@ if ("AmbientLightSensor" in window) {
 
   sensor.onreading = () => {
     if (sensor.illuminance === null || sensor.illuminance === 0) {
+      lightLevel.textContent = `Light Level: 00.00 lux`;
       bodyElement.classList.add("dark");
     } else if (sensor.illuminance !== null) {
       // De methode .toFixed(2) wordt gebruikt om het aantal decimalen te beperken tot twee cijfers na de komma.
