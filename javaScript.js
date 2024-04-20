@@ -1,5 +1,6 @@
 // Check if AmbientLightSensor is supported
 const lightLevel = document.getElementById("lux");
+const gloeiLamp = document.querySelector(".gloeiLamp");
 
 if ("AmbientLightSensor" in window) {
   // Create a new AmbientLightSensor object
@@ -13,6 +14,10 @@ if ("AmbientLightSensor" in window) {
       lightLevel.textContent = `Light Level: ${sensor.illuminance.toFixed(
         2
       )} lux`;
+
+      const glowIntensity = illuminance * 0.1; // Adjust the multiplier as needed
+      // Apply the glow intensity to the .gloeiLamp element
+      gloeiLamp.style.boxShadow = `0 0 ${glowIntensity}px 1.5em var(--gloed)`;
     }
   };
 
