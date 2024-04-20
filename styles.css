@@ -5,6 +5,13 @@
   --gloed: #f9ef6469;
 }
 
+:root.dark {
+  --wit: rgb(184, 184, 184);
+  --bg: #020304;
+  --gloeilamp: #707070;
+  --gloed: transparent;
+}
+
 body {
   height: 100%;
   margin: 0;

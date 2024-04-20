@@ -1,6 +1,7 @@
 // Check if AmbientLightSensor is supported
 const lightLevel = document.getElementById("lux");
 const gloeiLamp = document.querySelector(".gloeiLamp");
+const root = document.documentElement;
 
 if ("AmbientLightSensor" in window) {
   // Create a new AmbientLightSensor object
@@ -9,6 +10,10 @@ if ("AmbientLightSensor" in window) {
   // Update lamp color and shadow when the sensor value changes
 
   sensor.onreading = () => {
+    if (sensor.illuminance === null) {
+      root.classList.add("dark");
+    }
+
     if (sensor.illuminance !== null) {
       // De methode .toFixed(2) wordt gebruikt om het aantal decimalen te beperken tot twee cijfers na de komma.
       lightLevel.textContent = `Light Level: ${sensor.illuminance.toFixed(
