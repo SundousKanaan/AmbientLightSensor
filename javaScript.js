@@ -1,7 +1,7 @@
 // Check if AmbientLightSensor is supported
 const lightLevel = document.getElementById("lux");
 const gloeiLamp = document.querySelector(".gloeiLamp");
-const root = document.documentElement;
+// const root = document.documentElement;
 
 if ("AmbientLightSensor" in window) {
   // Create a new AmbientLightSensor object
@@ -11,7 +11,8 @@ if ("AmbientLightSensor" in window) {
 
   sensor.onreading = () => {
     if (sensor.illuminance === null) {
-      root.classList.add("dark");
+      body.classList.add("dark");
+      root.style.setProperty("--blue", "lightblue");
     }
 
     if (sensor.illuminance !== null) {
@@ -22,7 +23,10 @@ if ("AmbientLightSensor" in window) {
 
       const glowIntensity = sensor.illuminance.toFixed(0) * 2; // Adjust the multiplier as needed
       const glowSpread = sensor.illuminance.toFixed(0) / 2; // Adjust the divider as needed
+      const illuminancePercentage = sensor.illuminance / 1000;
+
       gloeiLamp.style.boxShadow = `0 0 ${glowIntensity}px ${glowSpread}px var(--gloed)`;
+      gloeiLamp.style.backgroundColor = `rgba(249,239,100,${illuminancePercentage})`;
     }
   };
 

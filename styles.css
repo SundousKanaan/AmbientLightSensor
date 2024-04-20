@@ -1,11 +1,11 @@
 :root {
   --wit: rgba(255, 255, 255);
   --bg: #020304;
-  --gloeilamp: #f9ee64;
-  --gloed: #f9ef6469;
+  --gloeilamp: rgb(249, 239, 100);
+  --gloed: rgb(249, 239, 100);
 }
 
-:root.dark {
+body.dark {
   --wit: rgb(184, 184, 184);
   --bg: #020304;
   --gloeilamp: #707070;
